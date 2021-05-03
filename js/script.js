@@ -23,3 +23,11 @@ const add_tarefa = document.querySelector('#add-tarefa');
     }
 }
 add_tarefa.addEventListener('click', newTask);
+
+// conclui tarefa ao clicar
+var tarefas_adicionadas = document.querySelector('ul');
+tarefas_adicionadas.addEventListener('click', function (click) {
+    if(click.target.tagName === 'LI') {
+        click.target.classList.toggle('tarefa-feita');
+    }
+})

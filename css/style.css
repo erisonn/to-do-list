@@ -2,9 +2,9 @@ body, html {
     width: 100%;
     height: 100%;
     margin: 0;
-    background-color: whitesmoke;
+    background-image: linear-gradient(90deg, blueviolet, violet);
     color: black;
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 header {
     width: 100;
@@ -31,9 +31,11 @@ li {
     height: 50px;
     line-height: 50px;
     display: block;
-    border-bottom: 1px solid black;
+    background-color: whitesmoke;
+    margin: 1vmin 0px 1vmin 0px;
     font-size: 5vmin;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 .tarefas {
     text-align:center;
@@ -49,27 +51,22 @@ li {
     height: 50px;
     border: none;
     background-color: whitesmoke;
-    border-bottom: 1px solid black;
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 5vmin;
     outline: none;
 }
 #add-tarefa {
     border: none;
-    margin-left: 2vmin;
-    padding: 0px;
+    margin-left: -1.5em;
     height: 50px;
-    width: 9vmin;
-    font-size: 100%;
-    border-radius: 5px;
+    font-size: 4.5vmin;
     cursor: pointer;
-    color: green;
-    background-color: whitesmoke;
+    color: blueviolet;
+    background-color: transparent;
     transition: all 0.2s ease-in-out;
 }
 #add-tarefa:hover {
-    color: rgb(85, 128, 128);
-    text-shadow: 0 5px 5px whitesmoke;
+  color: rgb(80, 23, 133);
 }
 .apagar-tarefa {
     font-size: 3vmin;
@@ -91,6 +88,7 @@ li {
 }
 .tarefa-feita {
     text-decoration: line-through;
-    background-color: greenyellow;
+    color: green;
+    background-color: rgba(245, 245, 245, 0.452);
 }
 
