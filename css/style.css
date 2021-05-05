@@ -83,12 +83,11 @@ li {
     text-shadow: 0 1px 1px rgba(255, 0, 0, 0.664);
     font-size: 4vmin;
 }
-.delete {
-    display: none;
-}
 .tarefa-feita {
     text-decoration: line-through;
     color: green;
     background-color: rgba(245, 245, 245, 0.452);
 }
-
+.delete {
+    display: none;
+}

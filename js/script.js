@@ -5,7 +5,7 @@ const add_tarefa = document.querySelector('#add-tarefa');
      if (nova_tarefa.value == '') {
          window.alert('Digite uma tarefa!')
      } else {
-        // adiciona tarefa para a lista
+// adiciona tarefa para a lista
     var tarefas_lista = document.querySelector('.tarefas-lista');
     var item = document.createElement('li');
     item.textContent = nova_tarefa.value;
@@ -19,6 +19,14 @@ const add_tarefa = document.querySelector('#add-tarefa');
     apagar_tarefa.classList.add('apagar-tarefa');
     for(i in tarefa_item) {
         tarefa_item[i].appendChild(apagar_tarefa);
+        
+// exclui item da lista ao clicar no icone da lixeira
+        let del_tarefa = document.querySelectorAll('.apagar-tarefa');
+        Array.from(del_tarefa).forEach(function(element) {
+        element.addEventListener('click', function() {
+        element.parentElement.classList.add('delete');
+                })
+            })
         }
     }
 }
