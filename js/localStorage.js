@@ -18,6 +18,12 @@ salvarTarefas = () => {
     var tarefa_item = document.querySelectorAll('.tarefa-item');
     Array.from(tarefa_item).forEach(function(item) {
         tarefasArray.push(item.textContent);
+        let del_tarefa = document.querySelectorAll('.apagar-tarefa');
+        Array.from(del_tarefa).forEach(function(element) {
+        element.addEventListener('click', function() {
+        element.parentElement.classList.add('delete');
+            })
+        })
     })
 }
 
