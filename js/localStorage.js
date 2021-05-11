@@ -21,7 +21,15 @@ salvarTarefas = () => {
         let del_tarefa = document.querySelectorAll('.apagar-tarefa');
         Array.from(del_tarefa).forEach(function(element) {
         element.addEventListener('click', function() {
-        element.parentElement.classList.add('delete');
+            var tarefa_removida = element.parentElement.textContent;
+                for(i in tarefasArray) {
+                    if(tarefasArray[i] === tarefa_removida) {
+                        tarefasArray.splice(i, 1);
+                        console.log(tarefasArray)
+                        localStorage.setItem('tarefas', JSON.stringify(tarefasArray));
+                    }
+                }
+            element.parentElement.remove();
             })
         })
     })
