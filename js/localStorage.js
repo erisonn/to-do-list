@@ -1,19 +1,21 @@
+// carrega as tarefas salvas em localStorage ao carregar a pagina;
 carregarTarefas = () => {
   var tarefasArray = JSON.parse(localStorage.getItem('tarefas'));
   Array.from(tarefasArray).forEach(function(element) {
-    var tarefa_salva = document.createElement('li');
-    tarefa_salva.textContent = element;
-    tarefa_salva.classList.add('tarefa-item');
-    tarefas_lista.appendChild(tarefa_salva);
+    var item = document.createElement('li');
+    item.textContent = element;
+    item.classList.add('tarefa-item');
+    tarefas_lista.append(item);
     var tarefa_item = document.querySelectorAll('.tarefa-item');
     var apagar_tarefa = document.createElement('span');
     apagar_tarefa.innerHTML = '<i class="fas fa-trash-alt"></i>';
     apagar_tarefa.classList.add('apagar-tarefa');
     Array.from(tarefa_item).forEach(function(item) {
-        item.appendChild(apagar_tarefa);
+        item.append(apagar_tarefa);
         })
     })
 }
+// adiciona os eventlisteners as tarefas carregadas;
 salvarTarefas = () => {
     var tarefa_item = document.querySelectorAll('.tarefa-item');
     Array.from(tarefa_item).forEach(function(item) {
@@ -25,7 +27,6 @@ salvarTarefas = () => {
                 for(i in tarefasArray) {
                     if(tarefasArray[i] === tarefa_removida) {
                         tarefasArray.splice(i, 1);
-                        console.log(tarefasArray)
                         localStorage.setItem('tarefas', JSON.stringify(tarefasArray));
                     }
                 }
@@ -35,4 +36,4 @@ salvarTarefas = () => {
     })
 }
 
-window.onload = carregarTarefas(); salvarTarefas();
+window.onload = carregarTarefas(); salvarTarefas(); nova_tarefa.value = ''

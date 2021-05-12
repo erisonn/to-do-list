@@ -11,12 +11,26 @@
     <title>Lista de tarefas</title>
 </head>
 <body>
-    <header><h1>Lista de tarefas</h1></header>
-    <div class="tarefas">
-        <p><input type="text" placeholder="Tarefa..." id="nova-tarefa"><button id="add-tarefa"><i class="fas fa-plus-square"></i></button></p>
-        <ul class="tarefas-lista">
-        </ul>
-    </div>
+
+    <section>
+        <header><h1>Lista de tarefas</h1></header>
+        <div class="tarefas">
+            <p><input type="text" placeholder="Tarefa..." id="nova-tarefa"><button id="add-tarefa"><i class="fas fa-plus-square"></i></button></p>
+            <ul class="tarefas-lista">
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <header><h1>Tarefas concluidas</h1></header>
+        <div class="tarefas">
+            <ul id="tarefas-concluidas">
+                <li>teste</li>
+                <li>teste 2</li>
+            </ul>
+        </div>
+    </section>
+    
     <script src="./js/script.js"></script>
     <script src="./js/localStorage.js"></script>
 </body>
