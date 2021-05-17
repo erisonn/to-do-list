@@ -3,11 +3,17 @@ const add_tarefa = document.querySelector('#add-tarefa');
 const tarefas_lista = document.querySelector('.tarefas-lista');
 var tarefasArray = [];
 var tarefasConcluidasArray = [];
+if (localStorage.getItem("tarefas") === null) {
+    localStorage.setItem('tarefas', JSON.stringify(tarefasArray));
+}
+if (localStorage.getItem("tarefas concluidas") === null) {
+    localStorage.setItem('tarefas concluidas', JSON.stringify(tarefasConcluidasArray));
+}
 
 add_tarefa.addEventListener('click', () => {
     newTask();
 })
-
+// adiciona nova tarefa para a lista;
 newTask = () => {
     if (nova_tarefa.value == '') {
         window.alert('Digite uma tarefa!')
@@ -24,6 +30,7 @@ newTask = () => {
     }
 }
 
+// cria o icone da lixeira em cada tarefa;
 lixeiraIcone = () => {
     var tarefa_item = document.querySelectorAll('.tarefa-item');
     var apagar_tarefa = document.createElement('span');
@@ -34,6 +41,7 @@ lixeiraIcone = () => {
     })
 }
 
+// deleta a tarefa ao clicar no icone da lixeira
 delTask = () => {
     let del_tarefa = document.querySelectorAll('.apagar-tarefa');
     Array.from(del_tarefa).forEach(function(element) {
@@ -62,12 +70,10 @@ completeTask = () => {
     tarefas_adicionadas.addEventListener('click', function (click) {
     if(click.target.tagName === 'LI') {
         click.target.classList.toggle('tarefa-feita');
-        var tarefa_feita = click.target.textContent;
-        if(tarefasConcluidasArray.includes(tarefa_feita) === false) {
-            tarefasConcluidasArray.push(tarefa_feita);
+        if(tarefasConcluidasArray.includes(click.target.textContent) === false) {
+            tarefasConcluidasArray.push(click.target.textContent);
             localStorage.setItem('tarefas concluidas', JSON.stringify(tarefasConcluidasArray));
-            console.log(tarefasConcluidasArray);
-            }
+        }
         }
     })
 }

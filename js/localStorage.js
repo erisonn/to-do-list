@@ -1,8 +1,8 @@
 // carrega as tarefas salvas em localStorage ao carregar a pagina;
 carregarTarefas = () => {
-  var tarefasArray = JSON.parse(localStorage.getItem('tarefas'));
-  var tarefasConcluidasArray = JSON.parse(localStorage.getItem('tarefas concluidas'));
-  Array.from(tarefasArray).forEach(function(element) {
+    var tarefasArray = JSON.parse(localStorage.getItem('tarefas'));
+    var tarefasConcluidasArray = JSON.parse(localStorage.getItem('tarefas concluidas'));
+    Array.from(tarefasArray).forEach(function(element) {
     var item = document.createElement('li');
     item.textContent = element;
     item.classList.add('tarefa-item');
@@ -26,4 +26,4 @@ salvarTarefas = () => {
     })  
 }
 
-window.onload = carregarTarefas(); salvarTarefas(); completeTask(); nova_tarefa.value = ''
+window.onload = completeTask(); nova_tarefa.value = ''; carregarTarefas(); salvarTarefas();
