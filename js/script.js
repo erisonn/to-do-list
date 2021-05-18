@@ -51,7 +51,7 @@ delTask = () => {
                  if(tarefasArray[i] === tarefa_removida) {
                     tarefasArray.splice(i, 1);
                     localStorage.setItem('tarefas', JSON.stringify(tarefasArray));
-                 }
+                }
              }
             for(i in tarefasConcluidasArray) {
                 if(tarefasConcluidasArray[i] === tarefa_removida) {
@@ -68,12 +68,20 @@ delTask = () => {
 completeTask = () => {
     var tarefas_adicionadas = document.querySelector('ul');
     tarefas_adicionadas.addEventListener('click', function (click) {
-    if(click.target.tagName === 'LI') {
-        click.target.classList.toggle('tarefa-feita');
-        if(tarefasConcluidasArray.includes(click.target.textContent) === false) {
-            tarefasConcluidasArray.push(click.target.textContent);
-            localStorage.setItem('tarefas concluidas', JSON.stringify(tarefasConcluidasArray));
-        }
+        if(click.target.tagName === 'LI') {
+            var tarefa_feita = click.target;
+            if(tarefasConcluidasArray.includes(tarefa_feita.textContent) === true) {
+                var index = tarefasConcluidasArray.indexOf(tarefa_feita.textContent);
+                if (index !== -1) {
+                    tarefa_feita.classList.remove('tarefa-feita');
+                    tarefasConcluidasArray.splice(index, 1);
+                    localStorage.setItem('tarefas concluidas', JSON.stringify(tarefasConcluidasArray));
+                }
+            } else {
+                tarefa_feita.classList.add('tarefa-feita');
+                tarefasConcluidasArray.push(tarefa_feita.textContent);
+                localStorage.setItem('tarefas concluidas', JSON.stringify(tarefasConcluidasArray));
+            }
         }
     })
 }

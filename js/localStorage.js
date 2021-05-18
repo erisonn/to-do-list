@@ -3,14 +3,14 @@ carregarTarefas = () => {
     var tarefasArray = JSON.parse(localStorage.getItem('tarefas'));
     var tarefasConcluidasArray = JSON.parse(localStorage.getItem('tarefas concluidas'));
     Array.from(tarefasArray).forEach(function(element) {
-    var item = document.createElement('li');
-    item.textContent = element;
-    item.classList.add('tarefa-item');
-    if(tarefasConcluidasArray.includes(item.textContent) === true) {
-        item.classList.add('tarefa-feita');
-    }
-    tarefas_lista.append(item);
-    lixeiraIcone();
+        var item = document.createElement('li');
+        item.textContent = element;
+        item.classList.add('tarefa-item');
+        if(tarefasConcluidasArray.includes(item.textContent) === true) {
+            item.classList.add('tarefa-feita');
+        }
+        tarefas_lista.append(item);
+        lixeiraIcone();
     })
 }
 
