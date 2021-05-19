@@ -1,2 +1,2 @@
 # to-do-list
-Lista de tarefas básica utilizando HTML, CSS e JavaScript.
+Lista de tarefas utilizando HTML, CSS(SASS) e JavaScript com a API Web Storage para salvar as tarefas no navegador.

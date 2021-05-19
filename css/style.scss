@@ -1,0 +1,94 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: linear-gradient(90deg, blueviolet, rgb(130, 168, 238));
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    width: 100;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5%;
+    h1 {
+        font-size: 5vmin;
+        margin: 0px;
+    }
+}
+.tarefas {
+    text-align:center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    width: 90%;
+    height: 60px;
+    div {
+        height: 50px;
+    }
+    ul {
+        padding: 0px;
+    }
+    li {
+        overflow:hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        height: 50px;
+        line-height: 50px;
+        display: block;
+        background-color: whitesmoke;
+        padding-left: 10px;
+        margin: 1vmin 0px 1vmin 0px;
+        font-size: 5vmin;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        .apagar-tarefa {
+            float: right;
+            font-size: 3vh;
+            padding: 0px;
+            border: none;
+            height: 100%;
+            margin-right: 10px;
+            color: rgb(255, 38, 0);
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                text-shadow: 0 1px 1px rgba(255, 0, 0, 0.664);
+                font-size: 4vh;
+            }
+        }
+    }
+    #nova-tarefa {
+        width: 100%;
+        height: 50px;
+        border: none;
+        text-align: left;
+        background-color: whitesmoke;
+        font-family: 'Roboto', sans-serif;
+        font-size: 5vmin;
+        outline: none;
+    }
+    #add-tarefa {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-58%) translateX(-95%);
+        border: none;
+        font-size: 4vh;
+        cursor: pointer;
+        color: green;
+        background-color: transparent;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            color: rgb(0, 189, 0);
+        }
+    }
+}
+
+.tarefa-feita {
+    text-decoration: line-through;
+    color: green;
+    background-color: rgba(245, 245, 245, 0.452)!important;
+}

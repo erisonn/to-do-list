@@ -1,94 +1,113 @@
 body, html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background-image: linear-gradient(90deg, blueviolet, violet);
-    color: rgb(39, 39, 39);
-    font-family: 'Roboto', sans-serif;
-}
-header {
-    width: 100;
-    text-align: center;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 5%;
-}
-h1 {
-    font-size: 5vmin;
-}
-h1, p {
-    margin: 0;
-    position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(blueviolet), to(#82a8ee));
+  background-image: linear-gradient(90deg, blueviolet, #82a8ee);
+  font-family: 'Roboto', sans-serif;
 }
 
-p {
-    top: 8px;
+header {
+  width: 100;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 5%;
 }
-ul {
-    padding: 0px;
+
+header h1 {
+  font-size: 5vmin;
+  margin: 0px;
 }
-li {
-    height: 50px;
-    line-height: 50px;
-    display: block;
-    background-color: whitesmoke;
-    margin: 1vmin 0px 1vmin 0px;
-    font-size: 5vmin;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
+
 .tarefas {
-    text-align:center;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20%;
-    width: 70%;
-    height: 60px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 20%;
+  width: 90%;
+  height: 60px;
 }
-#nova-tarefa {
-    width: 80%;
-    height: 50px;
-    border: none;
-    background-color: whitesmoke;
-    font-family: 'Roboto', sans-serif;
-    font-size: 5vmin;
-    outline: none;
+
+.tarefas div {
+  height: 50px;
 }
-#add-tarefa {
-    border: none;
-    margin-left: -1.5em;
-    height: 50px;
-    font-size: 4.5vmin;
-    cursor: pointer;
-    color: blueviolet;
-    background-color: transparent;
-    transition: all 0.2s ease-in-out;
+
+.tarefas ul {
+  padding: 0px;
 }
-#add-tarefa:hover {
-  color: rgb(80, 23, 133);
+
+.tarefas li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  background-color: whitesmoke;
+  padding-left: 10px;
+  margin: 1vmin 0px 1vmin 0px;
+  font-size: 5vmin;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-.apagar-tarefa {
-    font-size: 3vmin;
-    padding: 0px;
-    border: none;
-    height: 100%;
-    margin-right: 10px;
-    float: right;
-    color: rgb(255, 38, 0);
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+
+.tarefas li .apagar-tarefa {
+  float: right;
+  font-size: 3vh;
+  padding: 0px;
+  border: none;
+  height: 100%;
+  margin-right: 10px;
+  color: #ff2600;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-.apagar-tarefa:hover {
-    text-shadow: 0 1px 1px rgba(255, 0, 0, 0.664);
-    font-size: 4vmin;
+
+.tarefas li .apagar-tarefa:hover {
+  text-shadow: 0 1px 1px rgba(255, 0, 0, 0.664);
+  font-size: 4vh;
 }
+
+.tarefas #nova-tarefa {
+  width: 100%;
+  height: 50px;
+  border: none;
+  text-align: left;
+  background-color: whitesmoke;
+  font-family: 'Roboto', sans-serif;
+  font-size: 5vmin;
+  outline: none;
+}
+
+.tarefas #add-tarefa {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  -webkit-transform: translateY(-58%) translateX(-95%);
+          transform: translateY(-58%) translateX(-95%);
+  border: none;
+  font-size: 4vh;
+  cursor: pointer;
+  color: green;
+  background-color: transparent;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.tarefas #add-tarefa:hover {
+  color: #00bd00;
+}
+
 .tarefa-feita {
-    text-decoration: line-through;
-    color: green;
-    background-color: rgba(245, 245, 245, 0.452);
+  text-decoration: line-through;
+  color: green;
+  background-color: rgba(245, 245, 245, 0.452) !important;
 }
-.delete {
-    display: none;
-}
+/*# sourceMappingURL=style.css.map */
